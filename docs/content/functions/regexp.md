@@ -10,7 +10,8 @@ These functions allow user you to search and modify text with regular expression
 The syntax of the regular expressions accepted is [Go's `regexp` syntax](https://golang.org/pkg/regexp/syntax/#hdr-Syntax),
 and is the same general syntax used by Perl, Python, and other languages.
 
-## `regexp.Find`
+## `regexp.Find`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns a string holding the text of the leftmost match in `input`
 of the regular expression `expression`.
@@ -20,10 +21,10 @@ This function provides the same behaviour as Go's
 
 ### Usage
 
-```go
+```
 regexp.Find expression input
 ```
-```go
+```
 input | regexp.Find expression
 ```
 
@@ -45,7 +46,8 @@ $ gomplate -i 'no {{ "will not match" | regexp.Find "[0-9]" }}numbers'
 no numbers
 ```
 
-## `regexp.FindAll`
+## `regexp.FindAll`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns a list of all successive matches of the regular expression.
 
@@ -58,10 +60,10 @@ This function provides the same behaviour as Go's
 
 ### Usage
 
-```go
+```
 regexp.FindAll expression [n] input
 ```
-```go
+```
 input | regexp.FindAll expression [n]
 ```
 
@@ -84,7 +86,8 @@ $ gomplate -i '{{ "foo bar baz qux" | regexp.FindAll "[a-z]{3}" 3 | toJSON}}'
 ["foo", "bar", "baz"]
 ```
 
-## `regexp.Match`
+## `regexp.Match`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns `true` if a given regular expression matches a given input.
 
@@ -92,10 +95,10 @@ This returns a boolean which can be used in an `if` condition, for example.
 
 ### Usage
 
-```go
+```
 regexp.Match expression input
 ```
-```go
+```
 input | regexp.Match expression
 ```
 
@@ -113,7 +116,8 @@ $ gomplate -i '{{ if (.Env.USER | regexp.Match `^h`) }}username ({{.Env.USER}}) 
 username (hairyhenderson) starts with h!
 ```
 
-## `regexp.QuoteMeta`
+## `regexp.QuoteMeta`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Escapes all regular expression metacharacters in the input. The returned string is a regular expression matching the literal text.
 
@@ -122,10 +126,10 @@ This function provides the same behaviour as Go's
 
 ### Usage
 
-```go
+```
 regexp.QuoteMeta input
 ```
-```go
+```
 input | regexp.QuoteMeta
 ```
 
@@ -142,7 +146,8 @@ $ gomplate -i '{{ `{hello}` | regexp.QuoteMeta }}'
 \{hello\}
 ```
 
-## `regexp.Replace`
+## `regexp.Replace`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Replaces matches of a regular expression with the replacement string.
 
@@ -153,10 +158,10 @@ This function provides the same behaviour as Go's
 
 ### Usage
 
-```go
+```
 regexp.Replace expression replacement input
 ```
-```go
+```
 input | regexp.Replace expression replacement
 ```
 
@@ -179,7 +184,8 @@ $ gomplate -i '{{ regexp.Replace "(?P<first>[a-zA-Z]+) (?P<last>[a-zA-Z]+)" "${l
 Turing, Alan
 ```
 
-## `regexp.ReplaceLiteral`
+## `regexp.ReplaceLiteral`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Replaces matches of a regular expression with the replacement string.
 
@@ -191,10 +197,10 @@ This function provides the same behaviour as Go's
 
 ### Usage
 
-```go
+```
 regexp.ReplaceLiteral expression replacement input
 ```
-```go
+```
 input | regexp.ReplaceLiteral expression replacement
 ```
 
@@ -217,7 +223,8 @@ $ gomplate -i '{{ `foo.bar,baz` | regexp.ReplaceLiteral `\W` `$` }}'
 foo$bar$baz
 ```
 
-## `regexp.Split`
+## `regexp.Split`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Splits `input` into sub-strings, separated by the expression.
 
@@ -233,10 +240,10 @@ This function provides the same behaviour as Go's
 
 ### Usage
 
-```go
+```
 regexp.Split expression [n] input
 ```
-```go
+```
 input | regexp.Split expression [n]
 ```
 

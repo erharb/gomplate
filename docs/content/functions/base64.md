@@ -6,16 +6,17 @@ menu:
 ---
 
 
-## `base64.Encode`
+## `base64.Encode`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Encode data as a Base64 string. Specifically, this uses the standard Base64 encoding as defined in [RFC4648 &sect;4](https://tools.ietf.org/html/rfc4648#section-4) (and _not_ the URL-safe encoding).
 
 ### Usage
 
-```go
+```
 base64.Encode input
 ```
-```go
+```
 input | base64.Encode
 ```
 
@@ -36,7 +37,8 @@ $ gomplate -i '{{ "hello world" | base64.Encode }}'
 aGVsbG8gd29ybGQ=
 ```
 
-## `base64.Decode`
+## `base64.Decode`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Decode a Base64 string. This supports both standard ([RFC4648 &sect;4](https://tools.ietf.org/html/rfc4648#section-4)) and URL-safe ([RFC4648 &sect;5](https://tools.ietf.org/html/rfc4648#section-5)) encodings.
 
@@ -46,10 +48,10 @@ for binary data.
 
 ### Usage
 
-```go
+```
 base64.Decode input
 ```
-```go
+```
 input | base64.Decode
 ```
 
@@ -70,7 +72,8 @@ $ gomplate -i '{{ "aGVsbG8gd29ybGQ=" | base64.Decode }}'
 hello world
 ```
 
-## `base64.DecodeBytes`
+## `base64.DecodeBytes`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Decode a Base64 string. This supports both standard ([RFC4648 &sect;4](https://tools.ietf.org/html/rfc4648#section-4)) and URL-safe ([RFC4648 &sect;5](https://tools.ietf.org/html/rfc4648#section-5)) encodings.
 
@@ -80,7 +83,7 @@ Use [`base64.Decode`](#base64.Decode) to output a plain string.
 
 ### Usage
 
-```go
+```
 base64.DecodeBytes input
 ```
 

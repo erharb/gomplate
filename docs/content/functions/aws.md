@@ -23,7 +23,8 @@ for details.
 | `AWS_REGION` | Specifies where to send requests. See [this list](https://docs.aws.amazon.com/general/latest/gr/rande.html). Note that the region must be set for AWS functions to work correctly, either through this variable, through a configuration profile, or by running on an EC2 instance. |
 | `AWS_META_ENDPOINT` | _(Default `http://169.254.169.254`)_ Sets the base address of the instance metadata service. |
 
-## `aws.EC2Meta`
+## `aws.EC2Meta`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `ec2meta`
 
@@ -33,7 +34,7 @@ For times when running outside EC2, or when the metadata API can't be reached, a
 
 ### Usage
 
-```go
+```
 aws.EC2Meta key [default]
 ```
 
@@ -51,7 +52,8 @@ $ echo '{{aws.EC2Meta "instance-id"}}' | gomplate
 i-12345678
 ```
 
-## `aws.EC2Dynamic`
+## `aws.EC2Dynamic`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `ec2dynamic`
 
@@ -61,7 +63,7 @@ For times when running outside EC2, or when the metadata API can't be reached, a
 
 ### Usage
 
-```go
+```
 aws.EC2Dynamic key [default]
 ```
 
@@ -79,7 +81,8 @@ $ echo '{{ (aws.EC2Dynamic "instance-identity/document" | json).region }}' | gom
 us-east-1
 ```
 
-## `aws.EC2Region`
+## `aws.EC2Region`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `ec2region`
 
@@ -88,7 +91,7 @@ Queries AWS to get the region. An optional default can be provided, or returns
 
 ### Usage
 
-```go
+```
 aws.EC2Region [default]
 ```
 
@@ -113,7 +116,8 @@ $ echo '{{ aws.EC2Region "foo" }}' | ./gomplate
 foo
 ```
 
-## `aws.EC2Tag`
+## `aws.EC2Tag`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `ec2tag`
 
@@ -122,7 +126,7 @@ can be provided.
 
 ### Usage
 
-```go
+```
 aws.EC2Tag tag [default]
 ```
 
@@ -144,7 +148,8 @@ $ echo 'I am a {{ aws.EC2Tag "classification" "meat popsicle" }}.' | ./gomplate
 I am a meat popsicle.
 ```
 
-## `aws.EC2Tags`
+## `aws.EC2Tags`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `ec2tags`
 
@@ -152,7 +157,7 @@ Queries the AWS EC2 API to find all the tags/values [user-defined tag](http://do
 
 ### Usage
 
-```go
+```
 aws.EC2Tags
 ```
 
@@ -170,7 +175,8 @@ Name=bar
 svc:name=foobar
 ```
 
-## `aws.KMSEncrypt`
+## `aws.KMSEncrypt`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Encrypt an input string with the AWS Key Management Service (KMS).
 
@@ -195,10 +201,10 @@ See also [`aws.KMSDecrypt`](#aws-kmsdecrypt).
 
 ### Usage
 
-```go
+```
 aws.KMSEncrypt keyID input
 ```
-```go
+```
 input | aws.KMSEncrypt keyID
 ```
 
@@ -216,7 +222,8 @@ $ export CIPHER=$(gomplate -i '{{ aws.KMSEncrypt "alias/gomplate" "hello world" 
 $ gomplate -i '{{ env.Getenv "CIPHER" | aws.KMSDecrypt }}'
 ```
 
-## `aws.KMSDecrypt`
+## `aws.KMSDecrypt`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Decrypt ciphertext that was encrypted with the AWS Key Management Service
 (KMS).
@@ -230,10 +237,10 @@ See also [`aws.KMSEncrypt`](#aws-kmsencrypt).
 
 ### Usage
 
-```go
+```
 aws.KMSDecrypt input
 ```
-```go
+```
 input | aws.KMSDecrypt
 ```
 
@@ -250,7 +257,8 @@ $ export CIPHER=$(gomplate -i '{{ aws.KMSEncrypt "alias/gomplate" "hello world" 
 $ gomplate -i '{{ env.Getenv "CIPHER" | aws.KMSDecrypt }}'
 ```
 
-## `aws.Account`
+## `aws.Account`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the currently-authenticated AWS account ID number.
 
@@ -260,7 +268,7 @@ See also [`aws.UserID`](#aws-userid) and [`aws.ARN`](#aws-arn).
 
 ### Usage
 
-```go
+```
 aws.Account
 ```
 
@@ -272,7 +280,8 @@ $ gomplate -i 'My account is {{ aws.Account }}'
 My account is 123456789012
 ```
 
-## `aws.ARN`
+## `aws.ARN`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the AWS ARN (Amazon Resource Name) associated with the current authentication credentials.
 
@@ -282,7 +291,7 @@ See also [`aws.UserID`](#aws-userid) and [`aws.Account`](#aws-account).
 
 ### Usage
 
-```go
+```
 aws.ARN
 ```
 
@@ -294,7 +303,8 @@ $ gomplate -i 'Calling from {{ aws.ARN }}'
 Calling from arn:aws:iam::123456789012:user/Alice
 ```
 
-## `aws.UserID`
+## `aws.UserID`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the unique identifier of the calling entity. The exact value
 depends on the type of entity making the call. The values returned are those
@@ -307,7 +317,7 @@ See also [`aws.ARN`](#aws-arn) and [`aws.Account`](#aws-account).
 
 ### Usage
 
-```go
+```
 aws.UserID
 ```
 

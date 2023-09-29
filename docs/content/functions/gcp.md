@@ -19,7 +19,8 @@ with GCP APIs.
 | `GCP_META_ENDPOINT` | _(Default `http://metadata.google.internal`)_ Sets the base address of the instance metadata service. |
 | `GCP_TIMEOUT` | _(Default `500`)_ Adjusts timeout for API requests, in milliseconds. |
 
-## `gcp.Meta`
+## `gcp.Meta`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Queries GCP [Instance Metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata) for information.
 
@@ -27,7 +28,7 @@ For times when running outside GCP, or when the metadata API can't be reached, a
 
 ### Usage
 
-```go
+```
 gcp.Meta key [default]
 ```
 

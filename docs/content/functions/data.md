@@ -7,7 +7,8 @@ menu:
 
 A collection of functions that retrieve, parse, and convert structured data.
 
-## `datasource`
+## `datasource`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `ds`
 
@@ -19,7 +20,7 @@ See [Datasources](../../datasources) for (much!) more information.
 
 ### Usage
 
-```go
+```
 datasource alias [subpath]
 ```
 
@@ -42,7 +43,8 @@ $ gomplate -d person.json -i 'Hello {{ (datasource "person").name }}'
 Hello Dave
 ```
 
-## `datasourceExists`
+## `datasourceExists`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Tests whether or not a given datasource was defined on the commandline (with the
 [`--datasource/-d`](../../usage/#datasource-d) argument). This is intended mainly to allow
@@ -55,7 +57,7 @@ Useful when used in an `if`/`else` block.
 
 ### Usage
 
-```go
+```
 datasourceExists alias
 ```
 
@@ -72,7 +74,8 @@ $ echo '{{if (datasourceExists "test")}}{{datasource "test"}}{{else}}no worries{
 no worries
 ```
 
-## `datasourceReachable`
+## `datasourceReachable`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Tests whether or not a given datasource is defined and reachable, where the definition of "reachable" differs by datasource, but generally means the data is able to be read successfully.
 
@@ -80,7 +83,7 @@ Useful when used in an `if`/`else` block.
 
 ### Usage
 
-```go
+```
 datasourceReachable alias
 ```
 
@@ -97,13 +100,14 @@ $ gomplate -i '{{if (datasourceReachable "test")}}{{datasource "test"}}{{else}}n
 no worries
 ```
 
-## `listDatasources`
+## `listDatasources`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Lists all the datasources defined, list returned will be sorted in ascending order.
 
 ### Usage
 
-```go
+```
 listDatasources
 ```
 
@@ -116,7 +120,8 @@ Datasource-bar
 Datasource-person
 ```
 
-## `defineDatasource`
+## `defineDatasource`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Define a datasource alias with target URL inside the template. Overridden by the [`--datasource/-d`](../../usage/#datasource-d) flag.
 
@@ -128,7 +133,7 @@ See [Datasources](../../datasources) for (much!) more information.
 
 ### Usage
 
-```go
+```
 defineDatasource alias url
 ```
 
@@ -153,7 +158,8 @@ $ FOO='{"name": "Daisy"}' gomplate -d person=env:///FOO -i '{{ defineDatasource 
 Hello Daisy
 ```
 
-## `include`
+## `include`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Includes the content of a given datasource (provided by the [`--datasource/-d`](../../usage/#datasource-d) argument).
 
@@ -161,7 +167,7 @@ This is similar to [`datasource`](#datasource), except that the data is not pars
 
 ### Usage
 
-```go
+```
 include alias [subpath]
 ```
 
@@ -197,7 +203,8 @@ $ gomplate -d person.json -f input.tmpl
 }
 ```
 
-## `data.JSON`
+## `data.JSON`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `json`
 
@@ -216,10 +223,10 @@ If the input is in the [EJSON](https://github.com/Shopify/ejson) format (i.e. ha
 
 ### Usage
 
-```go
+```
 data.JSON in
 ```
-```go
+```
 in | data.JSON
 ```
 
@@ -242,7 +249,8 @@ $ gomplate < input.tmpl
 Hello world
 ```
 
-## `data.JSONArray`
+## `data.JSONArray`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `jsonArray`
 
@@ -250,10 +258,10 @@ Converts a JSON string into a slice. Only works for JSON Arrays.
 
 ### Usage
 
-```go
+```
 data.JSONArray in
 ```
-```go
+```
 in | data.JSONArray
 ```
 
@@ -276,7 +284,8 @@ $ gomplate < input.tmpl
 Hello world
 ```
 
-## `data.YAML`
+## `data.YAML`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `yaml`
 
@@ -287,10 +296,10 @@ For more explict YAML Array support, see [`data.JSONArray`](#data-yamlarray).
 
 ### Usage
 
-```go
+```
 data.YAML in
 ```
-```go
+```
 in | data.YAML
 ```
 
@@ -313,7 +322,8 @@ $ gomplate < input.tmpl
 Hello world
 ```
 
-## `data.YAMLArray`
+## `data.YAMLArray`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `yamlArray`
 
@@ -321,10 +331,10 @@ Converts a YAML string into a slice. Only works for YAML Arrays.
 
 ### Usage
 
-```go
+```
 data.YAMLArray in
 ```
-```go
+```
 in | data.YAMLArray
 ```
 
@@ -347,7 +357,8 @@ $ gomplate < input.tmpl
 Hello world
 ```
 
-## `data.TOML`
+## `data.TOML`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `toml`
 
@@ -358,10 +369,10 @@ Compatible with [TOML v0.4.0](https://github.com/toml-lang/toml/blob/master/vers
 
 ### Usage
 
-```go
+```
 data.TOML input
 ```
-```go
+```
 input | data.TOML
 ```
 
@@ -385,7 +396,8 @@ $ gomplate -f input.tmpl
 Hello world
 ```
 
-## `data.CSV`
+## `data.CSV`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `csv`
 
@@ -396,10 +408,10 @@ supported, but any single-character delimiter can be specified.
 
 ### Usage
 
-```go
+```
 data.CSV [delim] input
 ```
-```go
+```
 input | data.CSV [delim]
 ```
 
@@ -429,7 +441,8 @@ Go has 25 keywords.
 COBOL has 357 keywords.
 ```
 
-## `data.CSVByRow`
+## `data.CSVByRow`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `csvByRow`
 
@@ -444,10 +457,10 @@ can be used.
 
 ### Usage
 
-```go
+```
 data.CSVByRow [delim] [header] input
 ```
-```go
+```
 input | data.CSVByRow [delim] [header]
 ```
 
@@ -479,7 +492,8 @@ Go has 25 keywords.
 COBOL has 357 keywords.
 ```
 
-## `data.CSVByColumn`
+## `data.CSVByColumn`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `csvByColumn`
 
@@ -488,10 +502,10 @@ Like [`csvByRow`](#csvByRow), except that the data is presented as a columnar
 
 ### Usage
 
-```go
+```
 data.CSVByColumn [delim] [header] input
 ```
-```go
+```
 input | data.CSVByColumn [delim] [header]
 ```
 
@@ -522,7 +536,8 @@ Go
 COBOL
 ```
 
-## `data.ToJSON`
+## `data.ToJSON`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `toJSON`
 
@@ -530,10 +545,10 @@ Converts an object to a JSON document. Input objects may be the result of `json`
 
 ### Usage
 
-```go
+```
 data.ToJSON obj
 ```
-```go
+```
 obj | data.ToJSON
 ```
 
@@ -557,7 +572,8 @@ $ gomplate < input.tmpl
 {"hello":"world"}
 ```
 
-## `data.ToJSONPretty`
+## `data.ToJSONPretty`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `toJSONPretty`
 
@@ -570,10 +586,10 @@ The indent string must be provided as an argument.
 
 ### Usage
 
-```go
+```
 data.ToJSONPretty indent obj
 ```
-```go
+```
 obj | data.ToJSONPretty indent
 ```
 
@@ -598,7 +614,8 @@ $ gomplate < input.tmpl
 }
 ```
 
-## `data.ToYAML`
+## `data.ToYAML`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `toYAML`
 
@@ -608,10 +625,10 @@ or they could be provided by a [`datasource`](../general/datasource).
 
 ### Usage
 
-```go
+```
 data.ToYAML obj
 ```
-```go
+```
 obj | data.ToYAML
 ```
 
@@ -635,7 +652,8 @@ $ gomplate < input.tmpl
 hello: world
 ```
 
-## `data.ToTOML`
+## `data.ToTOML`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `toTOML`
 
@@ -643,10 +661,10 @@ Converts an object to a [TOML](https://github.com/toml-lang/toml) document.
 
 ### Usage
 
-```go
+```
 data.ToTOML obj
 ```
-```go
+```
 obj | data.ToTOML
 ```
 
@@ -663,7 +681,8 @@ $ gomplate -i '{{ `{"foo":"bar"}` | data.JSON | data.ToTOML }}'
 foo = "bar"
 ```
 
-## `data.ToCSV`
+## `data.ToCSV`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `toCSV`
 
@@ -679,10 +698,10 @@ you require `LF` (UNIX format, or `\n`), the output can be piped through
 
 ### Usage
 
-```go
+```
 data.ToCSV [delim] input
 ```
-```go
+```
 input | data.ToCSV [delim]
 ```
 

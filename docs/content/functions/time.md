@@ -74,7 +74,8 @@ $ gomplate -i '{{ (time.Now).Format time.Kitchen }}
 
 For other durations, such as `2h10m`, [`time.ParseDuration`](#time-parseduration) can be used.
 
-## `time.Now`
+## `time.Now`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the current local time, as a `time.Time`. This wraps [`time.Now`](https://golang.org/pkg/time/#Now).
 
@@ -82,7 +83,7 @@ Usually, further functions are called using the value returned by `Now`.
 
 ### Usage
 
-```go
+```
 time.Now
 ```
 
@@ -113,7 +114,8 @@ It is not daylight savings time.
 ... ... BEEP
 ```
 
-## `time.Parse`
+## `time.Parse`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Parses a timestamp defined by the given layout. This wraps [`time.Parse`](https://golang.org/pkg/time/#Parse).
 
@@ -127,10 +129,10 @@ _Note: In the absence of a time zone indicator, `time.Parse` returns a time in U
 
 ### Usage
 
-```go
+```
 time.Parse layout timestamp
 ```
-```go
+```
 timestamp | time.Parse layout
 ```
 
@@ -149,7 +151,8 @@ $ gomplate -i '{{ (time.Parse "2006-01-02" "1993-10-23").Format "Monday January 
 Saturday October 23, 1993 UTC
 ```
 
-## `time.ParseDuration`
+## `time.ParseDuration`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Parses a duration string. This wraps [`time.ParseDuration`](https://golang.org/pkg/time/#ParseDuration).
 
@@ -159,10 +162,10 @@ time units are `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.
 
 ### Usage
 
-```go
+```
 time.ParseDuration duration
 ```
-```go
+```
 duration | time.ParseDuration
 ```
 
@@ -181,17 +184,18 @@ $ gomplate -i '{{ (time.Now).Format time.Kitchen }}
 3:13AM
 ```
 
-## `time.ParseLocal`
+## `time.ParseLocal`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Same as [`time.Parse`](#time-parse), except that in the absence of a time zone
 indicator, the timestamp wil be parsed in the local timezone.
 
 ### Usage
 
-```go
+```
 time.ParseLocal layout timestamp
 ```
-```go
+```
 timestamp | time.ParseLocal layout
 ```
 
@@ -210,7 +214,8 @@ $ bin/gomplate -i '{{ (time.ParseLocal time.Kitchen "6:00AM").Format "15:04 MST"
 06:00 EST
 ```
 
-## `time.ParseInLocation`
+## `time.ParseInLocation`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Same as [`time.Parse`](#time-parse), except that the time is parsed in the given location's time zone.
 
@@ -218,10 +223,10 @@ This wraps [`time.ParseInLocation`](https://golang.org/pkg/time/#ParseInLocation
 
 ### Usage
 
-```go
+```
 time.ParseInLocation layout location timestamp
 ```
-```go
+```
 timestamp | time.ParseInLocation layout location
 ```
 
@@ -241,7 +246,8 @@ $ gomplate -i '{{ (time.ParseInLocation time.Kitchen "Africa/Luanda" "6:00AM").F
 06:00 LMT
 ```
 
-## `time.Since`
+## `time.Since`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the time elapsed since a given time. This wraps [`time.Since`](https://golang.org/pkg/time/#Since).
 
@@ -249,10 +255,10 @@ It is shorthand for `time.Now.Sub t`.
 
 ### Usage
 
-```go
+```
 time.Since t
 ```
-```go
+```
 t | time.Since
 ```
 
@@ -269,7 +275,8 @@ $ gomplate -i '{{ $t := time.Parse time.RFC3339 "1970-01-01T00:00:00Z" }}time si
 time since the epoch:423365h0m24.353828924s
 ```
 
-## `time.Unix`
+## `time.Unix`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the local `Time` corresponding to the given Unix time, in seconds since
 January 1, 1970 UTC. Note that fractional seconds can be used to denote
@@ -277,10 +284,10 @@ milliseconds, but must be specified as a string, not a floating point number.
 
 ### Usage
 
-```go
+```
 time.Unix time
 ```
-```go
+```
 time | time.Unix
 ```
 
@@ -304,7 +311,8 @@ $ gomplate -i '{{ (time.Unix "123456.789").UTC.Format time.StampMilli}}'
 Jan  2 10:17:36.789
 ```
 
-## `time.Until`
+## `time.Until`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the duration until a given time. This wraps [`time.Until`](https://golang.org/pkg/time/#Until).
 
@@ -312,10 +320,10 @@ It is shorthand for `$t.Sub time.Now`.
 
 ### Usage
 
-```go
+```
 time.Until t
 ```
-```go
+```
 t | time.Until
 ```
 
@@ -338,13 +346,14 @@ $ bin/gomplate -i '{{ $t := time.Parse time.RFC3339 "2020-01-01T00:00:00Z" }}onl
 only 14923h0m0s to go...
 ```
 
-## `time.ZoneName`
+## `time.ZoneName`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Return the local system's time zone's name.
 
 ### Usage
 
-```go
+```
 time.ZoneName
 ```
 
@@ -356,13 +365,14 @@ $ gomplate -i '{{time.ZoneName}}'
 EDT
 ```
 
-## `time.ZoneOffset`
+## `time.ZoneOffset`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Return the local system's time zone offset, in seconds east of UTC.
 
 ### Usage
 
-```go
+```
 time.ZoneOffset
 ```
 

@@ -13,7 +13,8 @@ This page documents the `path` namespace - see also the [`filepath`](../filepath
 
 These functions are wrappers for Go's [`path`](https://golang.org/pkg/path/) and [`path/filepath`](https://golang.org/pkg/path/filepath/) packages.
 
-## `path.Base`
+## `path.Base`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the last element of path. Trailing slashes are removed before extracting the last element. If the path is empty, Base returns `.`. If the path consists entirely of slashes, Base returns `/`.
 
@@ -21,10 +22,10 @@ A wrapper for Go's [`path.Base`](https://golang.org/pkg/path/#Base) function.
 
 ### Usage
 
-```go
+```
 path.Base path
 ```
-```go
+```
 path | path.Base
 ```
 
@@ -41,7 +42,8 @@ $ gomplate -i '{{ path.Base "/tmp/foo" }}'
 foo
 ```
 
-## `path.Clean`
+## `path.Clean`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Clean returns the shortest path name equivalent to path by purely lexical processing.
 
@@ -49,10 +51,10 @@ A wrapper for Go's [`path.Clean`](https://golang.org/pkg/path/#Clean) function.
 
 ### Usage
 
-```go
+```
 path.Clean path
 ```
-```go
+```
 path | path.Clean
 ```
 
@@ -69,7 +71,8 @@ $ gomplate -i '{{ path.Clean "/tmp//foo/../" }}'
 /tmp
 ```
 
-## `path.Dir`
+## `path.Dir`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns all but the last element of path, typically the path's directory.
 
@@ -77,10 +80,10 @@ A wrapper for Go's [`path.Dir`](https://golang.org/pkg/path/#Dir) function.
 
 ### Usage
 
-```go
+```
 path.Dir path
 ```
-```go
+```
 path | path.Dir
 ```
 
@@ -97,7 +100,8 @@ $ gomplate -i '{{ path.Dir "/tmp/foo" }}'
 /tmp
 ```
 
-## `path.Ext`
+## `path.Ext`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the file name extension used by path.
 
@@ -105,10 +109,10 @@ A wrapper for Go's [`path.Ext`](https://golang.org/pkg/path/#Ext) function.
 
 ### Usage
 
-```go
+```
 path.Ext path
 ```
-```go
+```
 path | path.Ext
 ```
 
@@ -125,7 +129,8 @@ $ gomplate -i '{{ path.Ext "/tmp/foo.csv" }}'
 .csv
 ```
 
-## `path.IsAbs`
+## `path.IsAbs`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Reports whether the path is absolute.
 
@@ -133,10 +138,10 @@ A wrapper for Go's [`path.IsAbs`](https://golang.org/pkg/path/#IsAbs) function.
 
 ### Usage
 
-```go
+```
 path.IsAbs path
 ```
-```go
+```
 path | path.IsAbs
 ```
 
@@ -155,7 +160,8 @@ $ gomplate -i 'the path is {{ if (path.IsAbs "../foo.csv") }}absolute{{else}}rel
 the path is relative
 ```
 
-## `path.Join`
+## `path.Join`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Joins any number of path elements into a single path, adding a separating slash if necessary.
 
@@ -163,7 +169,7 @@ A wrapper for Go's [`path.Join`](https://golang.org/pkg/path/#Join) function.
 
 ### Usage
 
-```go
+```
 path.Join elem...
 ```
 
@@ -180,7 +186,8 @@ $ gomplate -i '{{ path.Join "/tmp" "foo" "bar" }}'
 /tmp/foo/bar
 ```
 
-## `path.Match`
+## `path.Match`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Reports whether name matches the shell file name pattern.
 
@@ -188,7 +195,7 @@ A wrapper for Go's [`path.Match`](https://golang.org/pkg/path/#Match) function.
 
 ### Usage
 
-```go
+```
 path.Match pattern path
 ```
 
@@ -206,7 +213,8 @@ $ gomplate -i '{{ path.Match "*.csv" "foo.csv" }}'
 true
 ```
 
-## `path.Split`
+## `path.Split`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Splits path immediately following the final slash, separating it into a directory and file name component.
 
@@ -216,10 +224,10 @@ A wrapper for Go's [`path.Split`](https://golang.org/pkg/path/#Split) function.
 
 ### Usage
 
-```go
+```
 path.Split path
 ```
-```go
+```
 path | path.Split
 ```
 

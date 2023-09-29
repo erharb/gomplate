@@ -8,7 +8,8 @@ menu:
 These are a collection of functions that mostly help converting from one type
 to another - generally from a `string` to something else, and vice-versa.
 
-## `conv.Bool`
+## `conv.Bool`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `bool`
 
@@ -18,10 +19,10 @@ Converts a true-ish string to a boolean. Can be used to simplify conditional sta
 
 ### Usage
 
-```go
+```
 conv.Bool in
 ```
-```go
+```
 in | conv.Bool
 ```
 
@@ -45,7 +46,8 @@ $ FOO=true gomplate < input.tmpl
 foo
 ```
 
-## `conv.Default`
+## `conv.Default`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `default`
 
@@ -58,10 +60,10 @@ Note that this will not provide a default for the case where the input is undefi
 
 ### Usage
 
-```go
+```
 conv.Default default in
 ```
-```go
+```
 in | conv.Default default
 ```
 
@@ -79,7 +81,8 @@ $ gomplate -i '{{ "" | default "foo" }} {{ "bar" | default "baz" }}'
 foo bar
 ```
 
-## `conv.Dict` _(deprecated)_
+## `conv.Dict`_(unreleased)_ _(deprecated)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Deprecation Notice:** Renamed to [`coll.Dict`](#coll-dict)
 
 **Alias:** `dict`
@@ -100,7 +103,7 @@ For creating arrays, see [`coll.Slice`](#coll-slice).
 
 ### Usage
 
-```go
+```
 conv.Dict in...
 ```
 
@@ -129,7 +132,8 @@ Hello world!
 Hello everybody!
 ```
 
-## `conv.Slice` _(deprecated)_
+## `conv.Slice`_(unreleased)_ _(deprecated)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Deprecation Notice:** Renamed to [`coll.Slice`](#coll-slice)
 
 **Alias:** `slice`
@@ -138,7 +142,7 @@ Creates a slice (like an array or list). Useful when needing to `range` over a b
 
 ### Usage
 
-```go
+```
 conv.Slice in...
 ```
 
@@ -157,7 +161,8 @@ Hello, Lisa
 Hello, Maggie
 ```
 
-## `conv.Has` _(deprecated)_
+## `conv.Has`_(unreleased)_ _(deprecated)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Deprecation Notice:** Renamed to [`coll.Has`](#coll-has)
 
 **Alias:** `has`
@@ -166,7 +171,7 @@ Reports whether a given object has a property with the given key, or whether a g
 
 ### Usage
 
-```go
+```
 conv.Has in item
 ```
 
@@ -196,7 +201,8 @@ $ gomplate -i '{{ $o := data.JSON (getenv "DATA") -}}
 THERE IS NO FOO
 ```
 
-## `conv.Join`
+## `conv.Join`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `join`
 
@@ -204,7 +210,7 @@ Concatenates the elements of an array to create a string. The separator string `
 
 ### Usage
 
-```go
+```
 conv.Join in sep
 ```
 
@@ -222,7 +228,8 @@ $ gomplate -i '{{ $a := coll.Slice 1 2 3 }}{{ join $a "-" }}'
 1-2-3
 ```
 
-## `conv.URL`
+## `conv.URL`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `urlParse`
 
@@ -232,7 +239,7 @@ Any of `url.URL`'s methods can be called on the result.
 
 ### Usage
 
-```go
+```
 conv.URL in
 ```
 
@@ -264,7 +271,8 @@ $ gomplate -i '{{ (conv.URL "https://user:supersecret@example.com").Redacted }}'
 https://user:xxxxx@example.com
 ```
 
-## `conv.ParseInt`
+## `conv.ParseInt`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 _**Note:**_ See [`conv.ToInt64`](#conv-toint64) instead for a simpler and more flexible variant of this function.
 
@@ -272,7 +280,7 @@ Parses a string as an int64. Equivalent to [strconv.ParseInt](https://golang.org
 
 ### Usage
 
-```go
+```
 conv.ParseInt
 ```
 
@@ -291,7 +299,8 @@ $ HEXVAL=7C0 gomplate < input.tmpl
 The value in decimal is 1984
 ```
 
-## `conv.ParseFloat`
+## `conv.ParseFloat`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 _**Note:**_ See [`conv.ToFloat`](#conv-tofloat) instead for a simpler and more flexible variant of this function.
 
@@ -299,7 +308,7 @@ Parses a string as an float64 for later use. Equivalent to [strconv.ParseFloat](
 
 ### Usage
 
-```go
+```
 conv.ParseFloat
 ```
 
@@ -319,13 +328,14 @@ $ PI=3.14159265359 gomplate < input.tmpl
 pi is greater than 3
 ```
 
-## `conv.ParseUint`
+## `conv.ParseUint`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Parses a string as an uint64 for later use. Equivalent to [strconv.ParseUint](https://golang.org/pkg/strconv/#ParseUint)
 
 ### Usage
 
-```go
+```
 conv.ParseUint
 ```
 
@@ -344,7 +354,8 @@ $ BIG=FFFFFFFFFFFFFFFF gomplate < input.tmpl
 18446744073709551615 is max uint64
 ```
 
-## `conv.Atoi`
+## `conv.Atoi`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 _**Note:**_ See [`conv.ToInt`](#conv-toint) and [`conv.ToInt64`](#conv-toint64) instead for simpler and more flexible variants of this function.
 
@@ -352,7 +363,7 @@ Parses a string as an int for later use. Equivalent to [strconv.Atoi](https://go
 
 ### Usage
 
-```go
+```
 conv.Atoi
 ```
 
@@ -374,7 +385,8 @@ $ NUMBER=21 gomplate < input.tmpl
 The number is greater than 5
 ```
 
-## `conv.ToBool`
+## `conv.ToBool`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Converts the input to a boolean value.
 Possible `true` values are: `1` or the strings `"t"`, `"true"`, or `"yes"`
@@ -382,10 +394,10 @@ Possible `true` values are: `1` or the strings `"t"`, `"true"`, or `"yes"`
 
 ### Usage
 
-```go
+```
 conv.ToBool input
 ```
-```go
+```
 input | conv.ToBool
 ```
 
@@ -404,7 +416,8 @@ $ gomplate -i '{{ conv.ToBool false }} {{ conv.ToBool "blah" }} {{ conv.ToBool 0
 false false false
 ```
 
-## `conv.ToBools`
+## `conv.ToBools`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Converts a list of inputs to an array of boolean values.
 Possible `true` values are: `1` or the strings `"t"`, `"true"`, or `"yes"`
@@ -412,10 +425,10 @@ Possible `true` values are: `1` or the strings `"t"`, `"true"`, or `"yes"`
 
 ### Usage
 
-```go
+```
 conv.ToBools input
 ```
-```go
+```
 input | conv.ToBools
 ```
 
@@ -434,7 +447,8 @@ $ gomplate -i '{{ conv.ToBools false "blah" 0 }}'
 [false false false]
 ```
 
-## `conv.ToInt64`
+## `conv.ToInt64`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Converts the input to an `int64` (64-bit signed integer).
 
@@ -447,7 +461,7 @@ Floating-point numbers (with decimal points) are truncated.
 
 ### Usage
 
-```go
+```
 conv.ToInt64 in
 ```
 
@@ -472,7 +486,8 @@ $ gomplate -i '{{conv.ToInt64 true }}'
 1
 ```
 
-## `conv.ToInt`
+## `conv.ToInt`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Converts the input to an `int` (signed integer, 32- or 64-bit depending
 on platform). This is similar to [`conv.ToInt64`](#conv-toint64) on 64-bit
@@ -488,7 +503,7 @@ See also [`conv.ToInt64`](#conv-toint64).
 
 ### Usage
 
-```go
+```
 conv.ToInt in
 ```
 
@@ -513,7 +528,8 @@ $ gomplate -i '{{conv.ToInt true }}'
 1
 ```
 
-## `conv.ToInt64s`
+## `conv.ToInt64s`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Converts the inputs to an array of `int64`s.
 
@@ -521,7 +537,7 @@ This delegates to [`conv.ToInt64`](#conv-toint64) for each input argument.
 
 ### Usage
 
-```go
+```
 conv.ToInt64s in...
 ```
 
@@ -538,7 +554,8 @@ gomplate -i '{{ conv.ToInt64s true 0x42 "123,456.99" "1.2345e+3"}}'
 [1 66 123456 1234]
 ```
 
-## `conv.ToInts`
+## `conv.ToInts`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Converts the inputs to an array of `int`s.
 
@@ -546,7 +563,7 @@ This delegates to [`conv.ToInt`](#conv-toint) for each input argument.
 
 ### Usage
 
-```go
+```
 conv.ToInts in...
 ```
 
@@ -563,7 +580,8 @@ gomplate -i '{{ conv.ToInts true 0x42 "123,456.99" "1.2345e+3"}}'
 [1 66 123456 1234]
 ```
 
-## `conv.ToFloat64`
+## `conv.ToFloat64`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Converts the input to a `float64`.
 
@@ -574,7 +592,7 @@ errors, or `0` or `-1`.
 
 ### Usage
 
-```go
+```
 conv.ToFloat64 in
 ```
 
@@ -593,7 +611,8 @@ $ gomplate -i '{{ conv.ToFloat64 "9,000.09"}}'
 9000.09
 ```
 
-## `conv.ToFloat64s`
+## `conv.ToFloat64s`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Converts the inputs to an array of `float64`s.
 
@@ -601,7 +620,7 @@ This delegates to [`conv.ToFloat64`](#conv-tofloat64) for each input argument.
 
 ### Usage
 
-```go
+```
 conv.ToFloat64s in...
 ```
 
@@ -618,7 +637,8 @@ $ gomplate -i '{{ conv.ToFloat64s true 0x42 "123,456.99" "1.2345e+3"}}'
 [1 66 123456.99 1234.5]
 ```
 
-## `conv.ToString`
+## `conv.ToString`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Converts the input (of any type) to a `string`.
 
@@ -626,7 +646,7 @@ The input will always be represented in _some_ way.
 
 ### Usage
 
-```go
+```
 conv.ToString in
 ```
 
@@ -647,7 +667,8 @@ $ gomplate -i '{{ conv.ToString nil }}'
 nil
 ```
 
-## `conv.ToStrings`
+## `conv.ToStrings`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Converts the inputs (of any type) to an array of `string`s
 
@@ -655,7 +676,7 @@ This delegates to [`conv.ToString`](#conv-tostring) for each input argument.
 
 ### Usage
 
-```go
+```
 conv.ToStrings in...
 ```
 

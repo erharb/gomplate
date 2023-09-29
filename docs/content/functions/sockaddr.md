@@ -20,10 +20,15 @@ the specific attributes you're interested in.
 
 To demonstrate how this can be used, here's an example that lists all of the IPv4 addresses available on the system:
 
-```console
-$ gomplate -i '{{ range (sockaddr.GetAllInterfaces | sockaddr.Include "type" "ipv4") -}}
+_in.tmpl:_
+```
+{{ range (sockaddr.GetAllInterfaces | sockaddr.Include "type" "ipv4") -}}
 {{ . | sockaddr.Attr "address" }}
-{{end}}'
+{{end}}
+```
+
+```console
+$ gomplate -f in.tmpl
 127.0.0.1
 10.0.0.8
 132.79.79.79
@@ -32,7 +37,8 @@ $ gomplate -i '{{ range (sockaddr.GetAllInterfaces | sockaddr.Include "type" "ip
 [RFC 1918]: http://tools.ietf.org/html/rfc1918
 [RFC 6890]: http://tools.ietf.org/html/rfc6890
 
-## `sockaddr.GetAllInterfaces`
+## `sockaddr.GetAllInterfaces`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Iterates over all available network interfaces and finds all available IP
 addresses on each interface and converts them to `sockaddr.IPAddrs`, and returning
@@ -42,12 +48,13 @@ Should be piped through a further function to refine and extract attributes.
 
 ### Usage
 
-```go
+```
 sockaddr.GetAllInterfaces
 ```
 
 
-## `sockaddr.GetDefaultInterfaces`
+## `sockaddr.GetDefaultInterfaces`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns `IfAddrs` of the addresses attached to the default route.
 
@@ -55,12 +62,13 @@ Should be piped through a further function to refine and extract attributes.
 
 ### Usage
 
-```go
+```
 sockaddr.GetDefaultInterfaces
 ```
 
 
-## `sockaddr.GetPrivateInterfaces`
+## `sockaddr.GetPrivateInterfaces`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns an array of `IfAddr`s containing every IP that matches
 [RFC 6890][], is attached to the interface with
@@ -75,12 +83,13 @@ Should be piped through a further function to refine and extract attributes.
 
 ### Usage
 
-```go
+```
 sockaddr.GetPrivateInterfaces
 ```
 
 
-## `sockaddr.GetPublicInterfaces`
+## `sockaddr.GetPublicInterfaces`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns an array of `IfAddr`s that do not match [RFC 6890][],
 are attached to the default route, and are forwardable.
@@ -89,12 +98,13 @@ Should be piped through a further function to refine and extract attributes.
 
 ### Usage
 
-```go
+```
 sockaddr.GetPublicInterfaces
 ```
 
 
-## `sockaddr.Sort`
+## `sockaddr.Sort`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns an array of `IfAddr`s sorted based on the given selector. Multiple sort
 clauses can be passed in as a comma-delimited list without whitespace.
@@ -121,10 +131,10 @@ non-deterministic order.
 
 ### Usage
 
-```go
+```
 sockaddr.Sort selector <array-of-IfAddrs>
 ```
-```go
+```
 <array-of-IfAddrs> | sockaddr.Sort selector
 ```
 
@@ -142,7 +152,8 @@ To sort first by interface name, then by address (descending):
 $ gomplate -i '{{ sockaddr.GetAllInterfaces | sockaddr.Sort "name,-address" }}'
 ```
 
-## `sockaddr.Exclude`
+## `sockaddr.Exclude`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns an array of `IfAddr`s filtered by interfaces that do not match the given
 selector's value.
@@ -171,10 +182,10 @@ These flags are supported by the `flag` selector:
 
 ### Usage
 
-```go
+```
 sockaddr.Exclude selector value <array-of-IfAddrs>
 ```
-```go
+```
 <array-of-IfAddrs> | sockaddr.Exclude selector value
 ```
 
@@ -193,7 +204,8 @@ To exclude all IPv6 interfaces:
 $ gomplate -i '{{ sockaddr.GetAllInterfaces | sockaddr.Exclude "type" "ipv6" }}'
 ```
 
-## `sockaddr.Include`
+## `sockaddr.Include`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns an array of `IfAddr`s filtered by interfaces that match the given
 selector's value.
@@ -202,10 +214,10 @@ This is the inverse of `sockaddr.Exclude`. See [`sockaddr.Exclude`](#sockaddr.Ex
 
 ### Usage
 
-```go
+```
 sockaddr.Include selector value <array-of-IfAddrs>
 ```
-```go
+```
 <array-of-IfAddrs> | sockaddr.Include selector value
 ```
 
@@ -217,16 +229,17 @@ sockaddr.Include selector value <array-of-IfAddrs>
 | `value` | _(required)_ the selector value to include |
 | `<array-of-IfAddrs>` | _(required)_ the array of `IfAddr`s to consider |
 
-## `sockaddr.Attr`
+## `sockaddr.Attr`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the named attribute as a string.
 
 ### Usage
 
-```go
+```
 sockaddr.Attr selector <array-of-IfAddrs>
 ```
-```go
+```
 <array-of-IfAddrs> | sockaddr.Attr selector
 ```
 
@@ -244,17 +257,18 @@ $ gomplate -i '{{ range (sockaddr.GetAllInterfaces | sockaddr.Include "type" "ip
 lo0 en0
 ```
 
-## `sockaddr.Join`
+## `sockaddr.Join`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Selects the given attribute from each `IfAddr` in the source array, and joins
 the results with the given separator.
 
 ### Usage
 
-```go
+```
 sockaddr.Join selector separator <array-of-IfAddrs>
 ```
-```go
+```
 <array-of-IfAddrs> | sockaddr.Join selector separator
 ```
 
@@ -273,16 +287,17 @@ $ gomplate -i '{{ sockaddr.GetAllInterfaces | sockaddr.Join "name" "," }}'
 lo0,lo0,lo0,en0,en0
 ```
 
-## `sockaddr.Limit`
+## `sockaddr.Limit`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns a slice of `IfAddr`s based on the specified limit.
 
 ### Usage
 
-```go
+```
 sockaddr.Limit limit <array-of-IfAddrs>
 ```
-```go
+```
 <array-of-IfAddrs> | sockaddr.Limit limit
 ```
 
@@ -300,16 +315,17 @@ $ gomplate -i '{{ sockaddr.GetAllInterfaces | sockaddr.Limit 2 | sockaddr.Join "
 lo0|lo0
 ```
 
-## `sockaddr.Offset`
+## `sockaddr.Offset`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns a slice of `IfAddr`s based on the specified offset.
 
 ### Usage
 
-```go
+```
 sockaddr.Offset offset <array-of-IfAddrs>
 ```
-```go
+```
 <array-of-IfAddrs> | sockaddr.Offset offset
 ```
 
@@ -327,17 +343,18 @@ $ gomplate -i '{{ sockaddr.GetAllInterfaces | sockaddr.Limit 2 | sockaddr.Offset
 ::1
 ```
 
-## `sockaddr.Unique`
+## `sockaddr.Unique`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Creates a unique array of `IfAddr`s based on the matching selector. Assumes the input has
 already been sorted.
 
 ### Usage
 
-```go
+```
 sockaddr.Unique selector <array-of-IfAddrs>
 ```
-```go
+```
 <array-of-IfAddrs> | sockaddr.Unique selector
 ```
 
@@ -355,7 +372,8 @@ $ gomplate -i '{{ sockaddr.GetAllInterfaces | sockaddr.Unique "name" | sockaddr.
 lo0, en0
 ```
 
-## `sockaddr.Math`
+## `sockaddr.Math`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Applies a math operation to each `IfAddr` in the input. Any failure will result in zero results.
 
@@ -364,10 +382,10 @@ for details.
 
 ### Usage
 
-```go
+```
 sockaddr.Math selector operation <array-of-IfAddrs>
 ```
-```go
+```
 <array-of-IfAddrs> | sockaddr.Math selector operation
 ```
 
@@ -386,7 +404,8 @@ $ gomplate -i '{{ sockaddr.GetAllInterfaces | sockaddr.Math "address" "+5" | soc
 127.0.0.6
 ```
 
-## `sockaddr.GetPrivateIP`
+## `sockaddr.GetPrivateIP`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns a string with a single IP address that is part of [RFC 6890][] and has a
 default route. If the system can't determine its IP address or find an [RFC 6890][]
@@ -394,7 +413,7 @@ IP address, an empty string will be returned instead.
 
 ### Usage
 
-```go
+```
 sockaddr.GetPrivateIP
 ```
 
@@ -406,7 +425,8 @@ $ gomplate -i '{{ sockaddr.GetPrivateIP }}'
 10.0.0.28
 ```
 
-## `sockaddr.GetPrivateIPs`
+## `sockaddr.GetPrivateIPs`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns a space-separated string with all IP addresses that are part of [RFC 6890][]
 (regardless of whether or not there is a default route, unlike `GetPublicIP`).
@@ -415,7 +435,7 @@ returned instead.
 
 ### Usage
 
-```go
+```
 sockaddr.GetPrivateIPs
 ```
 
@@ -427,7 +447,8 @@ $ gomplate -i '{{ sockaddr.GetPrivateIPs }}'
 10.0.0.28 192.168.0.1
 ```
 
-## `sockaddr.GetPublicIP`
+## `sockaddr.GetPublicIP`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns a string with a single IP address that is NOT part of [RFC 6890][] and
 has a default route. If the system can't determine its IP address or find a
@@ -435,7 +456,7 @@ non-[RFC 6890][] IP address, an empty string will be returned instead.
 
 ### Usage
 
-```go
+```
 sockaddr.GetPublicIP
 ```
 
@@ -447,7 +468,8 @@ $ gomplate -i '{{ sockaddr.GetPublicIP }}'
 8.1.2.3
 ```
 
-## `sockaddr.GetPublicIPs`
+## `sockaddr.GetPublicIPs`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns a space-separated string with all IP addresses that are NOT part of
 [RFC 6890][] (regardless of whether or not there is a default route, unlike
@@ -456,7 +478,7 @@ empty string will be returned instead.
 
 ### Usage
 
-```go
+```
 sockaddr.GetPublicIPs
 ```
 
@@ -468,14 +490,15 @@ $ gomplate -i '{{ sockaddr.GetPublicIPs }}'
 8.1.2.3 8.2.3.4
 ```
 
-## `sockaddr.GetInterfaceIP`
+## `sockaddr.GetInterfaceIP`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns a string with a single IP address sorted by the size of the network
 (i.e. IP addresses with a smaller netmask, larger network size, are sorted first).
 
 ### Usage
 
-```go
+```
 sockaddr.GetInterfaceIP name
 ```
 
@@ -492,7 +515,8 @@ $ gomplate -i '{{ sockaddr.GetInterfaceIP "en0" }}'
 10.0.0.28
 ```
 
-## `sockaddr.GetInterfaceIPs`
+## `sockaddr.GetInterfaceIPs`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns a string with all IPs, sorted by the size of the network (i.e. IP
 addresses with a smaller netmask, larger network size, are sorted first), on a
@@ -500,7 +524,7 @@ named interface.
 
 ### Usage
 
-```go
+```
 sockaddr.GetInterfaceIPs name
 ```
 

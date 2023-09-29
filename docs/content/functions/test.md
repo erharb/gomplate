@@ -8,7 +8,8 @@ menu:
 The `test` namespace contains some simple functions to help validate
 assumptions and can cause template generation to fail in specific cases.
 
-## `test.Assert`
+## `test.Assert`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `assert`
 
@@ -17,10 +18,10 @@ template generation to fail immediately with an optional message.
 
 ### Usage
 
-```go
+```
 test.Assert [message] value
 ```
-```go
+```
 value | test.Assert [message]
 ```
 
@@ -40,7 +41,8 @@ $ gomplate -i '{{ assert "something horrible happened" false }}'
 template: <arg>:1:3: executing "<arg>" at <assert "something ho...>: error calling assert: assertion failed: something horrible happened
 ```
 
-## `test.Fail`
+## `test.Fail`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `fail`
 
@@ -48,10 +50,10 @@ Cause template generation to fail immediately, with an optional message.
 
 ### Usage
 
-```go
+```
 test.Fail [message]
 ```
-```go
+```
 message | test.Fail
 ```
 
@@ -70,7 +72,8 @@ $ gomplate -i '{{ test.Fail "something is wrong!" }}'
 template: <arg>:1:7: executing "<arg>" at <test.Fail>: error calling Fail: template generation failed: something is wrong!
 ```
 
-## `test.IsKind`
+## `test.IsKind`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `isKind`
 
@@ -96,10 +99,10 @@ See also [`test.Kind`](test-kind).
 
 ### Usage
 
-```go
+```
 test.IsKind kind value
 ```
-```go
+```
 value | test.IsKind kind
 ```
 
@@ -133,7 +136,8 @@ Got a map:
 - "key2": foobar
 ```
 
-## `test.Kind`
+## `test.Kind`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `kind`
 
@@ -147,10 +151,10 @@ See also [`test.IsKind`](test-iskind).
 
 ### Usage
 
-```go
+```
 test.Kind value
 ```
-```go
+```
 value | test.Kind
 ```
 
@@ -171,7 +175,8 @@ $ gomplate -i '{{ dict "key1" true "key2" "foobar" | test.Kind }}'
 map
 ```
 
-## `test.Required`
+## `test.Required`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `required`
 
@@ -189,10 +194,10 @@ effect.
 
 ### Usage
 
-```go
+```
 test.Required [message] value
 ```
-```go
+```
 value | test.Required [message]
 ```
 
@@ -224,7 +229,8 @@ $ gomplate -d config=config.yaml -i '{{ (ds "config").bogus | required "The `con
 template: <arg>:1:7: executing "<arg>" at <"config">: map has no entry for key "bogus"
 ```
 
-## `test.Ternary`
+## `test.Ternary`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `ternary`
 
@@ -240,10 +246,10 @@ Keep in mind that using an explicit `if`/`else` block is often easier to underst
 
 ### Usage
 
-```go
+```
 test.Ternary truevalue falsevalue condition
 ```
-```go
+```
 condition | test.Ternary truevalue falsevalue
 ```
 

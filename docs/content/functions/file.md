@@ -7,16 +7,17 @@ menu:
 
 Functions for working with files.
 
-## `file.Exists`
+## `file.Exists`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Reports whether a file or directory exists at the given path.
 
 ### Usage
 
-```go
+```
 file.Exists path
 ```
-```go
+```
 path | file.Exists
 ```
 
@@ -41,16 +42,17 @@ $ gomplate -f input.tmpl
 yes
 ```
 
-## `file.IsDir`
+## `file.IsDir`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Reports whether a given path is a directory.
 
 ### Usage
 
-```go
+```
 file.IsDir path
 ```
-```go
+```
 path | file.IsDir
 ```
 
@@ -78,16 +80,17 @@ $ gomplate -f input.tmpl
 yes
 ```
 
-## `file.Read`
+## `file.Read`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Reads a given file _as text_. Note that this will succeed if the given file is binary, but the output may be gibberish.
 
 ### Usage
 
-```go
+```
 file.Read path
 ```
-```go
+```
 path | file.Read
 ```
 
@@ -105,16 +108,17 @@ $ gomplate -i '{{file.Read "/tmp/hi"}}'
 hello world
 ```
 
-## `file.ReadDir`
+## `file.ReadDir`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Reads a directory and lists the files and directories contained within.
 
 ### Usage
 
-```go
+```
 file.ReadDir path
 ```
-```go
+```
 path | file.ReadDir
 ```
 
@@ -137,7 +141,8 @@ c
 d
 ```
 
-## `file.Stat`
+## `file.Stat`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns a [`os.FileInfo`](https://golang.org/pkg/os/#FileInfo) describing the named path.
 
@@ -145,10 +150,10 @@ Essentially a wrapper for Go's [`os.Stat`](https://golang.org/pkg/os/#Stat) func
 
 ### Usage
 
-```go
+```
 file.Stat path
 ```
-```go
+```
 path | file.Stat
 ```
 
@@ -166,7 +171,8 @@ $ gomplate -i '{{ $s := file.Stat "/tmp/foo" }}{{ $s.Mode }} {{ $s.Size }} {{ $s
 -rw-r--r-- 12 foo
 ```
 
-## `file.Walk`
+## `file.Walk`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Like a recursive [`file.ReadDir`](#file-readdir), recursively walks the file tree rooted at `path`, and returns an array of all files and directories contained within.
 
@@ -178,10 +184,10 @@ Similar to Go's [`filepath.Walk`](https://golang.org/pkg/path/filepath/#Walk) fu
 
 ### Usage
 
-```go
+```
 file.Walk path
 ```
-```go
+```
 path | file.Walk
 ```
 
@@ -212,7 +218,8 @@ $ gomplate -i '{{ range file.Walk "/tmp/foo" }}{{ if not (file.IsDir .) }}{{.}} 
 /tmp/foo/two is a file
 ```
 
-## `file.Write`
+## `file.Write`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Write the given data to the given file. If the file exists, it will be overwritten.
 
@@ -224,10 +231,10 @@ If the data is a byte array (`[]byte`), it will be written as-is. Otherwise, it 
 
 ### Usage
 
-```go
+```
 file.Write filename data
 ```
-```go
+```
 data | file.Write filename
 ```
 

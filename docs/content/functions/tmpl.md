@@ -7,7 +7,8 @@ menu:
 
 Functions for defining or executing templates.
 
-## `tmpl.Exec`
+## `tmpl.Exec`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Execute (render) the named template. This is equivalent to using the [`template`](https://golang.org/pkg/text/template/#hdr-Actions) action, except the result is returned as a string.
 
@@ -15,10 +16,10 @@ This allows for post-processing of templates.
 
 ### Usage
 
-```go
+```
 tmpl.Exec name [context]
 ```
-```go
+```
 context | tmpl.Exec name
 ```
 
@@ -40,7 +41,8 @@ $ gomplate -i '{{define "T1"}}hello, {{.}}{{end}}{{ tmpl.Exec "T1" "world!" | st
 Hello, World!
 ```
 
-## `tmpl.Inline`
+## `tmpl.Inline`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `tpl`
 
@@ -52,7 +54,7 @@ A context can be provided, otherwise the default gomplate context will be used.
 
 ### Usage
 
-```go
+```
 tmpl.Inline [name] in [context]
 ```
 
@@ -81,7 +83,8 @@ hello world
 goodbye world
 ```
 
-## `tmpl.Path`
+## `tmpl.Path`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Output the path of the current template, if it came from a file. For
 inline templates, this will be an empty string.
@@ -91,7 +94,7 @@ of the main template will be returned instead.
 
 ### Usage
 
-```go
+```
 tmpl.Path
 ```
 
@@ -108,7 +111,8 @@ $ gomplate -f subdir/input.tpl
 this template is in subdir/input.tpl
 ```
 
-## `tmpl.PathDir`
+## `tmpl.PathDir`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Output the current template's directory. For inline templates, this will
 be an empty string.
@@ -118,7 +122,7 @@ of the main template will be used instead.
 
 ### Usage
 
-```go
+```
 tmpl.PathDir
 ```
 

@@ -17,7 +17,8 @@ this is required for your use-case.
 [RFC 4122]: https://en.wikipedia.org/wiki/Universally_unique_identifier
 [log an issue]: https://github.com/hairyhenderson/gomplate/issues/new
 
-## `uuid.V1`
+## `uuid.V1`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Create a version 1 UUID (based on the current MAC address and the current date/time).
 
@@ -25,7 +26,7 @@ Use [`uuid.V4`](#uuid-v4) instead in most cases.
 
 ### Usage
 
-```go
+```
 uuid.V1
 ```
 
@@ -37,7 +38,8 @@ $ gomplate -i '{{ uuid.V1 }}'
 4d757e54-446d-11e9-a8fa-72000877c7b0
 ```
 
-## `uuid.V4`
+## `uuid.V4`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Create a version 4 UUID (randomly generated).
 
@@ -45,7 +47,7 @@ This function consumes entropy.
 
 ### Usage
 
-```go
+```
 uuid.V4
 ```
 
@@ -57,14 +59,15 @@ $ gomplate -i '{{ uuid.V4 }}'
 40b3c2d2-e491-4b19-94cd-461e6fa35a60
 ```
 
-## `uuid.Nil`
+## `uuid.Nil`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the _nil_ UUID, that is, `00000000-0000-0000-0000-000000000000`,
 mostly for testing scenarios.
 
 ### Usage
 
-```go
+```
 uuid.Nil
 ```
 
@@ -76,17 +79,18 @@ $ gomplate -i '{{ uuid.Nil }}'
 00000000-0000-0000-0000-000000000000
 ```
 
-## `uuid.IsValid`
+## `uuid.IsValid`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Checks that the given UUID is in the correct format. It does not validate
 whether the version or variant are correct.
 
 ### Usage
 
-```go
+```
 uuid.IsValid uuid
 ```
-```go
+```
 uuid | uuid.IsValid
 ```
 
@@ -107,7 +111,8 @@ $ gomplate -i '{{ uuid.IsValid "urn:uuid:12345678-90ab-cdef-fedc-ba9876543210" }
 true
 ```
 
-## `uuid.Parse`
+## `uuid.Parse`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Parse a UUID for further manipulation or inspection.
 
@@ -120,10 +125,10 @@ encoding (`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`).
 
 ### Usage
 
-```go
+```
 uuid.Parse uuid
 ```
-```go
+```
 uuid | uuid.Parse
 ```
 

@@ -11,7 +11,8 @@ These functions help manipulate and query collections of data, like lists (slice
 For the functions that return an array, a Go `[]interface{}` is returned, regardless of whether or not the
 input was a different type.
 
-## `coll.Dict`
+## `coll.Dict`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `dict`
 
@@ -31,7 +32,7 @@ For creating arrays, see [`coll.Slice`](#coll-slice).
 
 ### Usage
 
-```go
+```
 coll.Dict in...
 ```
 
@@ -60,7 +61,8 @@ Hello world!
 Hello everybody!
 ```
 
-## `coll.Slice` _(deprecated)_
+## `coll.Slice`_(unreleased)_ _(deprecated)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Deprecation Notice:** The `slice` alias is deprecated, use the full name `coll.Slice` instead.
 
 **Alias:** `slice`
@@ -69,7 +71,7 @@ Creates a slice (like an array or list). Useful when needing to `range` over a b
 
 ### Usage
 
-```go
+```
 coll.Slice in...
 ```
 
@@ -88,7 +90,8 @@ Hello, Lisa
 Hello, Maggie
 ```
 
-## `coll.GoSlice`
+## `coll.GoSlice`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 This exposes the `slice` function from Go's [`text/template`](https://golang.org/pkg/text/template/#hdr-Functions)
 package. Note that using `slice` will use the `coll.Slice` function instead,
@@ -109,7 +112,7 @@ more details.
 
 ### Usage
 
-```go
+```
 coll.GoSlice item [indexes...]
 ```
 
@@ -127,7 +130,8 @@ $ gomplate -i '{{ coll.GoSlice "hello world" 3 8 }}'
 lo wo
 ```
 
-## `coll.Has`
+## `coll.Has`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `has`
 
@@ -135,7 +139,7 @@ Reports whether a given object has a property with the given key, or whether a g
 
 ### Usage
 
-```go
+```
 coll.Has in item
 ```
 
@@ -165,7 +169,8 @@ $ gomplate -i '{{ $o := data.JSON (getenv "DATA") -}}
 THERE IS NO FOO
 ```
 
-## `coll.Index`
+## `coll.Index`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the result of indexing the given map, slice, or array by the given
 key or index. This is similar to the built-in `index` function, but the
@@ -177,10 +182,10 @@ Multiple indexes may be given, for nested indexing.
 
 ### Usage
 
-```go
+```
 coll.Index indexes... in
 ```
-```go
+```
 in | coll.Index indexes...
 ```
 
@@ -207,7 +212,8 @@ $ gomplate -i '{{ coll.Slice "foo" "bar" "baz" | coll.Index 1 }}'
 bar
 ```
 
-## `coll.JSONPath`
+## `coll.JSONPath`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `jsonpath`
 
@@ -221,10 +227,10 @@ JSONPath expressions can be validated at https://jsonpath.com
 
 ### Usage
 
-```go
+```
 coll.JSONPath expression in
 ```
-```go
+```
 in | coll.JSONPath expression
 ```
 
@@ -242,7 +248,8 @@ $ gomplate -i '{{ .books | jsonpath `$..works[?( @.edition_count > 400 )].title`
 [Alice's Adventures in Wonderland Gulliver's Travels]
 ```
 
-## `coll.JQ`
+## `coll.JQ`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `jq`
 
@@ -261,10 +268,10 @@ See also:
 
 ### Usage
 
-```go
+```
 coll.JQ expression in
 ```
-```go
+```
 in | coll.JQ expression
 ```
 
@@ -284,7 +291,8 @@ $ gomplate \
 map[authors:[Lewis Carroll] published:1865 title:Alice's Adventures in Wonderland]
 ```
 
-## `coll.Keys`
+## `coll.Keys`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `keys`
 
@@ -297,10 +305,10 @@ See also [`coll.Values`](#coll-values).
 
 ### Usage
 
-```go
+```
 coll.Keys in...
 ```
-```go
+```
 in... | coll.Keys
 ```
 
@@ -319,7 +327,8 @@ $ gomplate -i '{{ $map1 := dict "foo" 1 "bar" 2 -}}{{ $map2 := dict "baz" 3 "qux
 [bar foo baz qux]
 ```
 
-## `coll.Values`
+## `coll.Values`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `values`
 
@@ -332,10 +341,10 @@ See also [`coll.Keys`](#coll-keys).
 
 ### Usage
 
-```go
+```
 coll.Values in...
 ```
-```go
+```
 in... | coll.Values
 ```
 
@@ -354,7 +363,8 @@ $ gomplate -i '{{ $map1 := dict "foo" 1 "bar" 2 -}}{{ $map2 := dict "baz" 3 "qux
 [2 1 3 4]
 ```
 
-## `coll.Append`
+## `coll.Append`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `append`
 
@@ -366,10 +376,10 @@ See also [`coll.Prepend`](#coll-prepend).
 
 ### Usage
 
-```go
+```
 coll.Append value list...
 ```
-```go
+```
 list... | coll.Append value
 ```
 
@@ -387,7 +397,8 @@ $ gomplate -i '{{ coll.Slice 1 1 2 3 | append 5 }}'
 [1 1 2 3 5]
 ```
 
-## `coll.Prepend`
+## `coll.Prepend`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `prepend`
 
@@ -399,10 +410,10 @@ See also [`coll.Append`](#coll-append).
 
 ### Usage
 
-```go
+```
 coll.Prepend value list...
 ```
-```go
+```
 list... | coll.Prepend value
 ```
 
@@ -420,7 +431,8 @@ $ gomplate -i '{{ coll.Slice 4 3 2 1 | prepend 5 }}'
 [5 4 3 2 1]
 ```
 
-## `coll.Uniq`
+## `coll.Uniq`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `uniq`
 
@@ -430,10 +442,10 @@ _Note that this function does not change the given list; it always produces a ne
 
 ### Usage
 
-```go
+```
 coll.Uniq list
 ```
-```go
+```
 list | coll.Uniq
 ```
 
@@ -450,7 +462,8 @@ $ gomplate -i '{{ coll.Slice 1 2 3 2 3 4 1 5 | uniq }}'
 [1 2 3 4 5]
 ```
 
-## `coll.Flatten`
+## `coll.Flatten`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `flatten`
 
@@ -461,10 +474,10 @@ _Note that this function does not change the given list; it always produces a ne
 
 ### Usage
 
-```go
+```
 coll.Flatten [depth] list
 ```
-```go
+```
 list | coll.Flatten [depth]
 ```
 
@@ -486,7 +499,8 @@ $ gomplate -i '{{ coll.Flatten 2 ("[[1,2],[],[[3,4],[[[5],6],7]]]" | jsonArray) 
 [1 2 3 4 [[5] 6] 7]
 ```
 
-## `coll.Reverse`
+## `coll.Reverse`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `reverse`
 
@@ -496,10 +510,10 @@ _Note that this function does not change the given list; it always produces a ne
 
 ### Usage
 
-```go
+```
 coll.Reverse list
 ```
-```go
+```
 list | coll.Reverse
 ```
 
@@ -516,7 +530,8 @@ $ gomplate -i '{{ coll.Slice 4 3 2 1 | reverse }}'
 [1 2 3 4]
 ```
 
-## `coll.Sort`
+## `coll.Sort`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `sort`
 
@@ -530,10 +545,10 @@ _Note that this function does not modify the input._
 
 ### Usage
 
-```go
+```
 coll.Sort [key] list
 ```
-```go
+```
 list | coll.Sort [key]
 ```
 
@@ -564,7 +579,8 @@ baz
 bar
 ```
 
-## `coll.Merge`
+## `coll.Merge`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `merge`
 
@@ -579,10 +595,10 @@ _Note that this function does not modify the input._
 
 ### Usage
 
-```go
+```
 coll.Merge dst srcs...
 ```
-```go
+```
 srcs... | coll.Merge dst
 ```
 
@@ -609,7 +625,8 @@ $ gomplate -i '{{ $dst := dict "foo" 1 "bar" 2 }}
 map[foo:1 bar:5 baz:4]
 ```
 
-## `coll.Pick`
+## `coll.Pick`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Given a map, returns a new map with any entries that have the given keys.
 
@@ -621,10 +638,10 @@ _Note that this function does not modify the input._
 
 ### Usage
 
-```go
+```
 coll.Pick keys... map
 ```
-```go
+```
 map | coll.Pick keys...
 ```
 
@@ -643,22 +660,23 @@ $ gomplate -i '{{ $data := dict "foo" 1 "bar" 2 "baz" 3 }}
 map[baz:3 foo:1]
 ```
 
-## `coll.Omit`
+## `coll.Omit`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Given a map, returns a new map without any entries that have the given keys.
 
 All keys are converted to strings.
 
-This is the inverse of [`coll.Pic`](#coll-pick).
+This is the inverse of [`coll.Pick`](#coll-pick).
 
 _Note that this function does not modify the input._
 
 ### Usage
 
-```go
+```
 coll.Omit keys... map
 ```
-```go
+```
 map | coll.Omit keys...
 ```
 

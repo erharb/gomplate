@@ -14,7 +14,8 @@ to generate pseudo-random numbers. Note that these functions are not suitable
 for use in security-sensitive applications, such as cryptography. However,
 these functions will not deplete system entropy.
 
-## `random.ASCII`
+## `random.ASCII`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Generates a random string of a desired length, containing the set of
 printable characters from the 7-bit [ASCII](https://en.wikipedia.org/wiki/ASCII)
@@ -22,7 +23,7 @@ set. This includes _space_ (' '), but no other whitespace characters.
 
 ### Usage
 
-```go
+```
 random.ASCII count
 ```
 
@@ -39,13 +40,14 @@ $ gomplate -i '{{ random.ASCII 8 }}'
 _woJ%D&K
 ```
 
-## `random.Alpha`
+## `random.Alpha`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Generates a random alphabetical (`A-Z`, `a-z`) string of a desired length.
 
 ### Usage
 
-```go
+```
 random.Alpha count
 ```
 
@@ -62,13 +64,14 @@ $ gomplate -i '{{ random.Alpha 42 }}'
 oAqHKxHiytYicMxTMGHnUnAfltPVZDhFkVkgDvatJK
 ```
 
-## `random.AlphaNum`
+## `random.AlphaNum`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Generates a random alphanumeric (`0-9`, `A-Z`, `a-z`) string of a desired length.
 
 ### Usage
 
-```go
+```
 random.AlphaNum count
 ```
 
@@ -85,7 +88,8 @@ $ gomplate -i '{{ random.AlphaNum 16 }}'
 4olRl9mRmVp1nqSm
 ```
 
-## `random.String`
+## `random.String`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Generates a random string of a desired length.
 
@@ -106,7 +110,7 @@ verify the correct code-points.
 
 ### Usage
 
-```go
+```
 random.String count [regex] [lower] [upper]
 ```
 
@@ -146,16 +150,17 @@ $ gomplate -i 'Poker time! {{ random.String 5 "\U0001f0a1" "\U0001f0de" }}'
 Poker time! 🂼🂺🂳🃅🂪
 ```
 
-## `random.Item`
+## `random.Item`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Pick an element at a random from a given slice or array.
 
 ### Usage
 
-```go
+```
 random.Item items
 ```
-```go
+```
 items | random.Item
 ```
 
@@ -177,7 +182,8 @@ $ gomplate -i '{{ getenv "SLICE" | jsonArray | random.Item }}'
 blue
 ```
 
-## `random.Number`
+## `random.Number`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Pick a random integer. By default, a number between `0` and `100`
 (inclusive) is chosen, but this range can be overridden.
@@ -188,7 +194,7 @@ The result is given as an `int64`.
 
 ### Usage
 
-```go
+```
 random.Number [min] [max]
 ```
 
@@ -214,7 +220,8 @@ $ gomplate -i '{{ random.Number 5 }}'
 2
 ```
 
-## `random.Float`
+## `random.Float`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Pick a random decimal floating-point number. By default, a number between
 `0.0` and `1.0` (_exclusive_, i.e. `[0.0,1.0)`) is chosen, but this range
@@ -224,7 +231,7 @@ The result is given as a `float64`.
 
 ### Usage
 
-```go
+```
 random.Float [min] [max]
 ```
 

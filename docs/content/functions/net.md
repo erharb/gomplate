@@ -15,17 +15,18 @@ calculations.
 [`inet.af/netaddr`]: https://pkg.go.dev/inet.af/netaddr
 [`net`]: https://pkg.go.dev/net
 
-## `net.LookupIP`
+## `net.LookupIP`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Resolve an IPv4 address for a given host name. When multiple IP addresses
 are resolved, the first one is returned.
 
 ### Usage
 
-```go
+```
 net.LookupIP name
 ```
-```go
+```
 name | net.LookupIP
 ```
 
@@ -42,16 +43,17 @@ $ gomplate -i '{{ net.LookupIP "example.com" }}'
 93.184.216.34
 ```
 
-## `net.LookupIPs`
+## `net.LookupIPs`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Resolve all IPv4 addresses for a given host name. Returns an array of strings.
 
 ### Usage
 
-```go
+```
 net.LookupIPs name
 ```
-```go
+```
 name | net.LookupIPs
 ```
 
@@ -68,7 +70,8 @@ $ gomplate -i '{{ join (net.LookupIPs "twitter.com") "," }}'
 104.244.42.65,104.244.42.193
 ```
 
-## `net.LookupCNAME`
+## `net.LookupCNAME`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Resolve the canonical name for a given host name. This does a DNS lookup for the
 `CNAME` record type. If no `CNAME` is present, a canonical form of the given name
@@ -76,10 +79,10 @@ is returned -- e.g. `net.LookupCNAME "localhost"` will return `"localhost."`.
 
 ### Usage
 
-```go
+```
 net.LookupCNAME name
 ```
-```go
+```
 name | net.LookupCNAME
 ```
 
@@ -96,7 +99,8 @@ $ gomplate -i '{{ net.LookupCNAME "www.amazon.com" }}'
 d3ag4hukkh62yn.cloudfront.net.
 ```
 
-## `net.LookupSRV`
+## `net.LookupSRV`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Resolve a DNS [`SRV` service record](https://en.wikipedia.org/wiki/SRV_record).
 This implementation supports the canonical [RFC2782](https://tools.ietf.org/html/rfc2782)
@@ -113,10 +117,10 @@ following properties are available:
 
 ### Usage
 
-```go
+```
 net.LookupSRV name
 ```
-```go
+```
 name | net.LookupSRV
 ```
 
@@ -138,7 +142,8 @@ $ gomplate -i '{{ net.LookupSRV "_sip._udp.sip.voice.google.com" | toJSONPretty 
 }
 ```
 
-## `net.LookupSRVs`
+## `net.LookupSRVs`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Resolve a DNS [`SRV` service record](https://en.wikipedia.org/wiki/SRV_record).
 This implementation supports the canonical [RFC2782](https://tools.ietf.org/html/rfc2782)
@@ -155,10 +160,10 @@ returned. For each element, the following properties are available:
 
 ### Usage
 
-```go
+```
 net.LookupSRVs name
 ```
-```go
+```
 name | net.LookupSRVs
 ```
 
@@ -183,7 +188,8 @@ priority=10/port=5060
 priority=20/port=5060
 ```
 
-## `net.LookupTXT`
+## `net.LookupTXT`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Resolve a DNS [`TXT` record](https://en.wikipedia.org/wiki/SRV_record).
 
@@ -191,10 +197,10 @@ This function returns all available TXT records as an array of strings.
 
 ### Usage
 
-```go
+```
 net.LookupTXT name
 ```
-```go
+```
 name | net.LookupTXT
 ```
 
@@ -213,7 +219,8 @@ $ gomplate -i '{{net.LookupTXT "example.com" | data.ToJSONPretty "  " }}'
 ]
 ```
 
-## `net.ParseAddr`
+## `net.ParseAddr`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Parse the given string as an IP address (a
 [`netip.Addr`](https://pkg.go.dev/net/netip#Addr)).
@@ -223,10 +230,10 @@ Any of `netip.Addr`'s methods may be called on the resulting value. See
 
 ### Usage
 
-```go
+```
 net.ParseAddr addr
 ```
-```go
+```
 addr | net.ParseAddr
 ```
 
@@ -246,7 +253,8 @@ $ gomplate -i '{{ $ip := net.ParseAddr (net.LookupIP "example.com") -}}
 93.176.0.0/12
 ```
 
-## `net.ParseIP` _(deprecated)_
+## `net.ParseIP`_(unreleased)_ _(deprecated)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Deprecation Notice:** Use [`net.ParseAddr`](#net-parseaddr) instead.
 
 Parse the given string as an IP address (a `netaddr.IP` from the
@@ -257,10 +265,10 @@ Any of `netaddr.IP`'s methods may be called on the resulting value. See
 
 ### Usage
 
-```go
+```
 net.ParseIP ip
 ```
-```go
+```
 ip | net.ParseIP
 ```
 
@@ -280,7 +288,8 @@ $ gomplate -i '{{ $ip := net.ParseIP (net.LookupIP "example.com") -}}
 93.176.0.0/12
 ```
 
-## `net.ParsePrefix`
+## `net.ParsePrefix`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Parse the given string as an IP address prefix (CIDR) representing an IP
 network (a [`netip.Prefix`](https://pkg.go.dev/net/netip#Prefix)).
@@ -293,10 +302,10 @@ Any of `netip.Prefix`'s methods may be called on the resulting value. See
 
 ### Usage
 
-```go
+```
 net.ParsePrefix prefix
 ```
-```go
+```
 prefix | net.ParsePrefix
 ```
 
@@ -317,7 +326,8 @@ $ gomplate -i '{{ $ip := net.ParseAddr (net.LookupIP "example.com") -}}
 true
 ```
 
-## `net.ParseIPPrefix` _(deprecated)_
+## `net.ParseIPPrefix`_(unreleased)_ _(deprecated)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Deprecation Notice:** Use [`net.ParsePrefix`](#net-parseprefix) instead.
 
 Parse the given string as an IP address prefix (CIDR) representing an IP
@@ -332,10 +342,10 @@ See [the docs][`inet.af/netaddr`] for details.
 
 ### Usage
 
-```go
+```
 net.ParseIPPrefix ipprefix
 ```
-```go
+```
 ipprefix | net.ParseIPPrefix
 ```
 
@@ -359,7 +369,8 @@ $ gomplate -i '{{ $net := net.ParseIPPrefix "93.184.0.0/12" -}}
 93.176.0.0-93.191.255.255
 ```
 
-## `net.ParseRange` _(experimental)_
+## `net.ParseRange`_(unreleased)_ _(experimental)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Experimental:** This function is [_experimental_][experimental] and may be enabled with the [`--experimental`][experimental] flag.
 
 [experimental]: ../config/#experimental
@@ -380,10 +391,10 @@ breaking changes to this function.
 
 ### Usage
 
-```go
+```
 net.ParseRange iprange
 ```
-```go
+```
 iprange | net.ParseRange
 ```
 
@@ -403,7 +414,8 @@ $ gomplate -i '{{ $range := net.ParseRange "1.2.3.0-1.2.3.233" -}}
 [1.2.3.0/25 1.2.3.128/26 1.2.3.192/27 1.2.3.224/29 1.2.3.232/31]
 ```
 
-## `net.ParseIPRange` _(deprecated)_
+## `net.ParseIPRange`_(unreleased)_ _(deprecated)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Deprecation Notice:** Use [`net.ParseRange`](#net-parserange) instead.
 
 Parse the given string as an inclusive range of IP addresses from the same
@@ -416,10 +428,10 @@ See [the docs][`inet.af/netaddr`] for details.
 
 ### Usage
 
-```go
+```
 net.ParseIPRange iprange
 ```
-```go
+```
 iprange | net.ParseIPRange
 ```
 
@@ -439,7 +451,8 @@ $ gomplate -i '{{ $range := net.ParseIPRange "1.2.3.0-1.2.3.233" -}}
 [1.2.3.0/25 1.2.3.128/26 1.2.3.192/27]
 ```
 
-## `net.CIDRHost` _(experimental)_
+## `net.CIDRHost`_(unreleased)_ _(experimental)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Experimental:** This function is [_experimental_][experimental] and may be enabled with the [`--experimental`][experimental] flag.
 
 [experimental]: ../config/#experimental
@@ -454,10 +467,10 @@ Any of `netip.Addr`'s methods may be called on the resulting value. See
 
 ### Usage
 
-```go
+```
 net.CIDRHost hostnum prefix
 ```
-```go
+```
 prefix | net.CIDRHost hostnum
 ```
 
@@ -475,7 +488,8 @@ $ gomplate -i '{{ "10.12.127.0/20" | net.CIDRHost 268 }}'
 10.12.113.12
 ```
 
-## `net.CIDRNetmask` _(experimental)_
+## `net.CIDRNetmask`_(unreleased)_ _(experimental)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Experimental:** This function is [_experimental_][experimental] and may be enabled with the [`--experimental`][experimental] flag.
 
 [experimental]: ../config/#experimental
@@ -487,10 +501,10 @@ Any of `netip.Addr`'s methods may be called on the resulting value. See
 
 ### Usage
 
-```go
+```
 net.CIDRNetmask prefix
 ```
-```go
+```
 prefix | net.CIDRNetmask
 ```
 
@@ -509,7 +523,8 @@ $ gomplate -i '{{ net.CIDRNetmask "fd00:fd12:3456:7890:00a2::/72" }}'
 ffff:ffff:ffff:ffff:ff00::
 ```
 
-## `net.CIDRSubnets` _(experimental)_
+## `net.CIDRSubnets`_(unreleased)_ _(experimental)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Experimental:** This function is [_experimental_][experimental] and may be enabled with the [`--experimental`][experimental] flag.
 
 [experimental]: ../config/#experimental
@@ -521,10 +536,10 @@ Any of `netip.Prefix`'s methods may be called on the resulting values. See
 
 ### Usage
 
-```go
+```
 net.CIDRSubnets newbits prefix
 ```
-```go
+```
 prefix | net.CIDRSubnets newbits
 ```
 
@@ -544,7 +559,8 @@ $ gomplate -i '{{ net.CIDRSubnets 2 "10.0.0.0/16" -}}'
 [10.0.0.0/18 10.0.64.0/18 10.0.128.0/18 10.0.192.0/18]
 ```
 
-## `net.CIDRSubnetSizes` _(experimental)_
+## `net.CIDRSubnetSizes`_(unreleased)_ _(experimental)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 **Experimental:** This function is [_experimental_][experimental] and may be enabled with the [`--experimental`][experimental] flag.
 
 [experimental]: ../config/#experimental
@@ -556,10 +572,10 @@ Any of `netip.Prefix`'s methods may be called on the resulting values. See
 
 ### Usage
 
-```go
+```
 net.CIDRSubnetSizes newbits... prefix
 ```
-```go
+```
 prefix | net.CIDRSubnetSizes newbits...
 ```
 

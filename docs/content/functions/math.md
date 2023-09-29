@@ -29,13 +29,14 @@ $ gomplate -i '{{ add 2.5 2.5 }}'
 5.0
 ```
 
-## `math.Abs`
+## `math.Abs`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the absolute value of a given number. When the input is an integer, the result will be an `int64`, otherwise it will be a `float64`.
 
 ### Usage
 
-```go
+```
 math.Abs num
 ```
 
@@ -52,7 +53,8 @@ $ gomplate -i '{{ math.Abs -3.5 }} {{ math.Abs 3.5 }} {{ math.Abs -42 }}'
 3.5 3.5 42
 ```
 
-## `math.Add`
+## `math.Add`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `add`
 
@@ -60,7 +62,7 @@ Adds all given operators. When one of the inputs is a floating-point number, the
 
 ### Usage
 
-```go
+```
 math.Add n...
 ```
 
@@ -77,7 +79,8 @@ $ gomplate -i '{{ math.Add 1 2 3 4 }} {{ math.Add 1.5 2 3 }}'
 10 6.5
 ```
 
-## `math.Ceil`
+## `math.Ceil`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the least integer value greater than or equal to a given floating-point number. This wraps Go's [`math.Ceil`](https://golang.org/pkg/math/#Ceil).
 
@@ -85,7 +88,7 @@ Returns the least integer value greater than or equal to a given floating-point 
 
 ### Usage
 
-```go
+```
 math.Ceil num
 ```
 
@@ -108,7 +111,8 @@ ceil "Inf" = +Inf
 ceil "-0" = 0
 ```
 
-## `math.Div`
+## `math.Div`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `div`
 
@@ -116,10 +120,10 @@ Divide the first number by the second. Division by zero is disallowed. The resul
 
 ### Usage
 
-```go
+```
 math.Div a b
 ```
-```go
+```
 b | math.Div a
 ```
 
@@ -137,7 +141,8 @@ $ gomplate -i '{{ math.Div 8 2 }} {{ math.Div 3 2 }}'
 4 1.5
 ```
 
-## `math.Floor`
+## `math.Floor`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the greatest integer value less than or equal to a given floating-point number. This wraps Go's [`math.Floor`](https://golang.org/pkg/math/#Floor).
 
@@ -145,7 +150,7 @@ Returns the greatest integer value less than or equal to a given floating-point 
 
 ### Usage
 
-```go
+```
 math.Floor num
 ```
 
@@ -168,7 +173,8 @@ floor "Inf" = +Inf
 floor "-0" = 0
 ```
 
-## `math.IsFloat`
+## `math.IsFloat`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns whether or not the given number can be interpreted as a floating-point literal, as defined by the [Go language reference](https://golang.org/ref/spec#Floating-point_literals).
 
@@ -176,7 +182,7 @@ Returns whether or not the given number can be interpreted as a floating-point l
 
 ### Usage
 
-```go
+```
 math.IsFloat num
 ```
 
@@ -198,13 +204,14 @@ NaN is a float
 Inf is a float
 ```
 
-## `math.IsInt`
+## `math.IsInt`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns whether or not the given number is an integer.
 
 ### Usage
 
-```go
+```
 math.IsInt num
 ```
 
@@ -223,13 +230,14 @@ $ gomplate -i '{{ range (coll.Slice 1.0 "-1.0" 5.1 42 "3.14" "foo" "0xFF" "NaN" 
 -0 is an integer
 ```
 
-## `math.IsNum`
+## `math.IsNum`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns whether the given input is a number. Useful for `if` conditions.
 
 ### Usage
 
-```go
+```
 math.IsNum in
 ```
 
@@ -246,13 +254,14 @@ $ gomplate -i '{{ math.IsNum "foo" }} {{ math.IsNum 0xDeadBeef }}'
 false true
 ```
 
-## `math.Max`
+## `math.Max`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the largest number provided. If any values are floating-point numbers, a `float64` is returned, otherwise an `int64` is returned. The same special-cases as Go's [`math.Max`](https://golang.org/pkg/math/#Max) are followed.
 
 ### Usage
 
-```go
+```
 math.Max nums...
 ```
 
@@ -269,13 +278,14 @@ $ gomplate -i '{{ math.Max 0 8.0 4.5 "-1.5e-11" }}'
 8
 ```
 
-## `math.Min`
+## `math.Min`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the smallest number provided. If any values are floating-point numbers, a `float64` is returned, otherwise an `int64` is returned. The same special-cases as Go's [`math.Min`](https://golang.org/pkg/math/#Min) are followed.
 
 ### Usage
 
-```go
+```
 math.Min nums...
 ```
 
@@ -292,7 +302,8 @@ $ gomplate -i '{{ math.Min 0 8 4.5 "-1.5e-11" }}'
 -1.5e-11
 ```
 
-## `math.Mul`
+## `math.Mul`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `mul`
 
@@ -300,7 +311,7 @@ Multiply all given operators together.
 
 ### Usage
 
-```go
+```
 math.Mul n...
 ```
 
@@ -317,7 +328,8 @@ $ gomplate -i '{{ math.Mul 8 8 2 }}'
 128
 ```
 
-## `math.Pow`
+## `math.Pow`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `pow`
 
@@ -325,7 +337,7 @@ Calculate an exponent - _b<sup>n</sup>_. This wraps Go's [`math.Pow`](https://go
 
 ### Usage
 
-```go
+```
 math.Pow b n
 ```
 
@@ -347,7 +359,8 @@ $ gomplate -i '{{ math.Pow 1.5 2 }}'
 2.2
 ```
 
-## `math.Rem`
+## `math.Rem`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `rem`
 
@@ -355,10 +368,10 @@ Return the remainder from an integer division operation.
 
 ### Usage
 
-```go
+```
 math.Rem a b
 ```
-```go
+```
 b | math.Rem a
 ```
 
@@ -378,7 +391,8 @@ $ gomplate -i '{{ math.Rem -5 3 }}'
 -2
 ```
 
-## `math.Round`
+## `math.Round`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Returns the nearest integer, rounding half away from zero.
 
@@ -386,7 +400,7 @@ Returns the nearest integer, rounding half away from zero.
 
 ### Usage
 
-```go
+```
 math.Round num
 ```
 
@@ -407,7 +421,8 @@ round "3.5" = 4
 round 6.5 = 7
 ```
 
-## `math.Seq`
+## `math.Seq`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `seq`
 
@@ -418,7 +433,7 @@ Note that the sequence _may_ not end at `end`, if `end` is not divisible by `ste
 
 ### Usage
 
-```go
+```
 math.Seq [start] end [step]
 ```
 
@@ -441,7 +456,8 @@ $ gomplate -i '{{ conv.Join (math.Seq 10 -3 2) ", " }}'
 10, 8, 6, 4, 2, 0, -2
 ```
 
-## `math.Sub`
+## `math.Sub`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `sub`
 
@@ -449,10 +465,10 @@ Subtract the second from the first of the given operators.  When one of the inpu
 
 ### Usage
 
-```go
+```
 math.Sub a b
 ```
-```go
+```
 b | math.Sub a
 ```
 

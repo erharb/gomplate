@@ -8,7 +8,8 @@ menu:
 [12-factor]: https://12factor.net
 [Docker Secrets]: https://docs.docker.com/engine/swarm/secrets/#build-support-for-docker-secrets-into-your-images
 
-## `env.Getenv`
+## `env.Getenv`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 **Alias:** `getenv`
 
@@ -28,7 +29,7 @@ conjunction with features like [Docker Secrets][].
 
 ### Usage
 
-```go
+```
 env.Getenv var [default]
 ```
 
@@ -54,7 +55,8 @@ $ gomplate -i 'Your secret is {{getenv "SECRET"}}'
 Your secret is safe
 ```
 
-## `env.ExpandEnv`
+## `env.ExpandEnv`_(unreleased)_
+**Unreleased:** _This function has not yet been included in a release of gomplate._
 
 Exposes the [os.ExpandEnv](https://golang.org/pkg/os/#ExpandEnv) function.
 
@@ -65,7 +67,7 @@ Like [`env.Getenv`](#env-getenv), the `_FILE` variant of a variable is used.
 
 ### Usage
 
-```go
+```
 env.ExpandEnv input
 ```
 
